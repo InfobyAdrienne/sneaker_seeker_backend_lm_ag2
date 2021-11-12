@@ -18,17 +18,20 @@ app.get('/api', (incomingRequest, outgoingResponse) => {
 
   var rapidApiRequest = unirest("GET", "https://v1-sneakers.p.rapidapi.com/v1/sneakers");
 	let filters = {
-		"limit": "100"
+		"limit": "40"
 	}
 	if (incomingRequest.query.brand !== undefined) {
-	 filters.brand = incomingRequest.query.brand;
+		filters.brand = incomingRequest.query.brand;
 	}
 	if (incomingRequest.query.limit !== undefined) {
 		filters.limit = incomingRequest.query.limit;
-	   }
+	}
 	if (incomingRequest.query.gender !== undefined) {
-	filters.gender = incomingRequest.query.gender;
-	   }
+		filters.gender = incomingRequest.query.gender;
+	}
+	if (incomingRequest.query.colorway!== undefined) {
+		filters.colorway = incomingRequest.query.colorway;
+	}   
 		rapidApiRequest.query(filters);
 
 	rapidApiRequest.headers({
