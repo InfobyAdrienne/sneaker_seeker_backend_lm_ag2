@@ -7,7 +7,26 @@ var unirest = require("unirest")
 var cors = require('cors')
 
 app.use(cors())
- 
+
+// app.get("/api/:id", function (req, res, next) {
+//   try {
+//     // assume you fetch from the database which contains null values here
+//     const withNullImg = generateUnirestRequest(
+//       `https://v1-sneakers.p.rapidapi.com/v1/sneakers/${incomingRequest.params.id}`
+//     );
+
+//     const ImageResponse = sneaker.media.thumbUrl.filter((item) => {
+//       let isValidObject = true;
+//       if (!item.img)
+//         // change this line according to what you want
+//         isValidObject = false;
+//       return isValidObject; // if true, means we want this object, false means filter this object
+//     });
+//   } catch (e) {
+//     //handle error
+//   }
+// });
+
 app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
 })
