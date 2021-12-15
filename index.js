@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get("/api", (incomingRequest, outgoingResponse) => {
   var rapidApiRequest = generateUnirestRequest(
-    "http://v1-sneakers.p.rapidapi.com/v1/sneakers"
+    "https://v1-sneakers.p.rapidapi.com/v1/sneakers"
   );
   let filters = {
     limit: "40",
@@ -41,7 +41,7 @@ app.get("/api", (incomingRequest, outgoingResponse) => {
 
 app.get("/api/:id", (incomingRequest, outgoingResponse) => {
   var rapidApiRequest = generateUnirestRequest(
-    `http://v1-sneakers.p.rapidapi.com/v1/sneakers/${incomingRequest.params.id}`
+    `https://v1-sneakers.p.rapidapi.com/v1/sneakers/${incomingRequest.params.id}`
   );
 
   rapidApiRequest.end(function (rapidApiResponse) {
