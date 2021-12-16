@@ -44,10 +44,10 @@ app.get("/api/:id", (incomingRequest, outgoingResponse) => {
     `https://v1-sneakers.p.rapidapi.com/v1/sneakers/${incomingRequest.params.id}`
   );
 
-  rapidApiRequest.end(function (rapidApiResponse) {
-    if (rapidApiResponse.error) throw new Error(rapidApiResponse.error);
-    outgoingResponse.send(rapidApiResponse.body);
-  });
+  // rapidApiRequest.end(function (rapidApiResponse) {
+  //   if (rapidApiResponse.error) throw new Error(rapidApiResponse.error);
+  //   outgoingResponse.send(rapidApiResponse.body);
+  // });
 });
 
 app.listen(port, () => {
